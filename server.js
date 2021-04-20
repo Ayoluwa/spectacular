@@ -21,7 +21,7 @@ mongoose.connect(dbKeys, {useNewUrlParser: true} ).then(() => {
     console.log("MONGODB connected successfully");
 })
   
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(passport.initialize());
 
