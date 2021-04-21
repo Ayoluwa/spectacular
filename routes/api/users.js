@@ -120,7 +120,6 @@ User.findOne({email: req.body.email}).then(returnedStuff => {
 
 
 
-
     });
 
 module.exports = router;

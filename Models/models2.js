@@ -10,4 +10,4 @@ hobbies: {type: String, require: true},
 });
 
 
-module.exports = User = mongoose.model("Users", UserSchemaII)
+module.exports = User = mongoose.model("Userrs", UserSchemaII)
