@@ -21,7 +21,7 @@ if(!isValid) {
 User.findOne({email: req.body.email}).then(returnedStuff => {
     if(returnedStuff) {
         return res.status(400).json({email: " Ooops...Email already exists!"});
-    } else {
+    } else{
         const newUser = new User ({
             name:req.body.name,
             email:req.body.email,
