@@ -44,12 +44,28 @@ User.findOne({email: req.body.email}).then(returnedStuff => {
 })
 
     //Hash password before saving in Database...
-    
-
-
-
 
 })
+
+router.delete('/:id', (req, res) => {
+    User.findById(req.params.id)
+        .then(item  => item.remove().then(() => res.json({success: true})))
+        .catch(err => res.status(404).json({success: false}))
+    });
+    
+
+    router.patch('/:id', async (req, res) => {
+        try {
+        const i_user = await User.findById(req.params.id);
+        i_user.hobbies = req.body.hobbies
+        const tellie = await i_user.save()
+        res.json(tellie)
+        } catch (err) {
+            res.send ('Error')
+        }
+        
+            
+    });
 
 
     router.post("/login", (req, res) => {

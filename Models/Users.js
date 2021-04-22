@@ -3,11 +3,30 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
 
-name: {type: String, required: true},
-email: {type: String, required: true},
-password: {type: String, required: true},
-hobbies: {type: String, require: true},
-date: {type: Date, default: Date.now }
+    name: {
+        type: String, 
+        required: true
+    },
+
+    email: {
+        type: String, 
+        required: true
+    },
+
+    password: {
+        type: String, 
+        required: true
+    },
+
+    hobbies: {
+        type: String, 
+        require: true
+    },
+    
+    date: {
+        type: Date, 
+        default: Date.now 
+    }
 
 });
 

@@ -10,12 +10,12 @@ const app = express();
 app.use(
     bodyParser.urlencoded({
         extended: false
-        
     })
 );
-    
+
 app.use(bodyParser.json());
 const dbKeys = require("./config/keys").mongoURI;
+const { urlencoded } = require('body-parser');
 
 mongoose.connect(dbKeys, {useNewUrlParser: true} ).then(() => {
     console.log("MONGODB connected successfully");
