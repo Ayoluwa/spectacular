@@ -28,7 +28,11 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
-
+app.get("/", (req, res) =>
+  res.status(200).send({
+    message: "Welcome to the API, why are you here",
+  })
+);
 
 app.listen(port, () => {
     console.log(`Server is up and running on port ${port}!`);
